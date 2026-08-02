@@ -127,6 +127,12 @@ footer{
   margin-top:28px; line-height:1.75;
 }
 footer a{color:var(--accent); text-decoration:none}
+footer .editor{
+  display:inline-block; margin-bottom:6px; padding:4px 13px;
+  background:var(--accent-soft); color:var(--accent);
+  border:1px solid var(--line); border-radius:999px;
+  font-weight:700; font-size:.83rem;
+}
 
 /* ---------- הדפסה ---------- */
 @media print{
