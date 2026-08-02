@@ -38,7 +38,12 @@ else
   perl -0pi -e "s|(<ul class=\"arch\">\n)|\$1$ENTRY\n|" archive.html
 fi
 
+git config user.name  >/dev/null 2>&1 || git config user.name  "econ-brief bot"
+git config user.email >/dev/null 2>&1 || git config user.email "econ-brief@localhost"
+
 git add -A
 git commit -q -m "דוח כלכלי $DATE" || { echo "אין שינויים לפרסום."; exit 0; }
-git push -q origin HEAD
+
+# credential.helper ריק — כדי שהמפתח המוטמע ב-URL של origin ייקלט
+git -c credential.helper= push -q origin HEAD
 echo "פורסם: $DATE.html"
