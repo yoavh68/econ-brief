@@ -185,3 +185,40 @@ footer .editor{
   .brand{font-size:.9rem}
   .nav-links a,.theme-btn{padding:5px 9px; font-size:.8rem}
 }
+
+
+/* ---------- מותג: כותרת בנויה מלבנים ---------- */
+:root{
+  --side:#5e3a2c; --shadow:rgba(28,28,26,.34); --edge:rgba(74,44,33,.6); --bsize:.50em;
+  --brick:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30'%3E%3Crect width='60' height='30' fill='%23ece5d8'/%3E%3Cg fill='%23b05540'%3E%3Crect x='1.4' y='1.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='31.4' y='1.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='-13.6' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='16.4' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='46.4' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3C/g%3E%3Cg fill='%239b4835' opacity='.5'%3E%3Crect x='31.4' y='1.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='16.4' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  --extrude:
+    -1px 1px 0 var(--side), -2px 2px 0 var(--side), -3px 3px 0 var(--side),
+    -4px 4px 0 var(--side), -5px 5px 0 var(--side), -6px 6px 0 var(--side),
+    -10px 12px 18px var(--shadow);
+}
+/* מתג המצב הכהה באתר הזה עובד עם html[data-theme] ולא עם body.dark */
+html[data-theme="dark"]{
+  --side:#2b1d16; --shadow:rgba(0,0,0,.62); --edge:rgba(0,0,0,.62);
+  --brick:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30'%3E%3Crect width='60' height='30' fill='%233d362c'/%3E%3Cg fill='%238d4433'%3E%3Crect x='1.4' y='1.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='31.4' y='1.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='-13.6' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='16.4' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='46.4' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3C/g%3E%3Cg fill='%23a75841' opacity='.45'%3E%3Crect x='31.4' y='1.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='16.4' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]){
+  --side:#2b1d16; --shadow:rgba(0,0,0,.62); --edge:rgba(0,0,0,.62);
+  --brick:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30'%3E%3Crect width='60' height='30' fill='%233d362c'/%3E%3Cg fill='%238d4433'%3E%3Crect x='1.4' y='1.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='31.4' y='1.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='-13.6' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='16.4' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='46.4' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3C/g%3E%3Cg fill='%23a75841' opacity='.45'%3E%3Crect x='31.4' y='1.4' width='27.2' height='12.2' rx='1.6'/%3E%3Crect x='16.4' y='16.4' width='27.2' height='12.2' rx='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+.bt{position:relative;display:inline-block;margin:0;line-height:1.3;
+    font-family:"Heebo",sans-serif;font-weight:900;letter-spacing:-1.5px;
+    font-size:clamp(44px,12vw,100px)}
+.bt .l{display:block;white-space:nowrap}
+.bt .back{position:absolute;inset:0;color:var(--side);text-shadow:var(--extrude);
+          z-index:0;user-select:none}
+.bt .face{position:relative;z-index:1;color:transparent;
+          background-image:var(--brick);
+          background-size:var(--bsize) calc(var(--bsize)/2);
+          -webkit-background-clip:text;background-clip:text;
+          -webkit-text-stroke:1.3px var(--edge)}
+.nav .bt{font-size:clamp(26px,6vw,42px);letter-spacing:-.8px}
+.nav .bt .face{background-size:.62em .31em;-webkit-text-stroke:.9px var(--edge)}
+.brand{overflow:hidden}
+.masthead{align-items:flex-end}
