@@ -33,6 +33,16 @@
         paint(btn);
       });
     }
+    /* כפתור רענון — מאלץ טעינה טרייה מהרשת ולא מהמטמון של הדפדפן */
+    var rb = document.getElementById('refreshBtn');
+    if (rb) {
+      rb.addEventListener('click', function () {
+        rb.disabled = true;
+        rb.style.opacity = '.5';
+        location.replace(location.pathname + '?r=' + Date.now());
+      });
+    }
+
     var y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
   });
